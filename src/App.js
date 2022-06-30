@@ -1,24 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import NavigationBar from './NavigationBar';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Membership from './pages/Membership';
+import Guides from './pages/Guides';
+import Forum from './pages/Forum';
+import Shop from './pages/Shop';
+import Book from './pages/Book';
+import NoPage from "./pages/NoPage";
+import SignUp from './pages/SignUp';
+import BillingInfo from './pages/BillingInfo';
+import Confirmation from './pages/Confirmation';
+import Coaches from './pages/Coaches.js';
+import ForumPost from './pages/ForumPost';
+import Cart from './pages/Cart';
+import BookingConfirmation from './pages/BookingConfirmation';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <NavigationBar />
+        <div>
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="membership" element={<Membership />} />  {/* <-- add coaching here */}
+            <Route path="guides" element={<Guides />} /> 
+            <Route path="forum" element={<Forum />} />
+            <Route path='forum/:post' element={<ForumPost />} />
+            <Route path="shop/:category" element={<Shop />} />
+            <Route exact path="shop" element={<Shop />} />
+            <Route path="book" element={<Book />} />
+            <Route path="signup" element={<SignUp />} />
+            <Route path="billingInfo" element={<BillingInfo />} />
+            <Route path="confirmation" element={<Confirmation />} />
+            <Route path="coaches" element={<Coaches />} />
+            <Route path="cart" element={<Cart />} />
+            <Route path="bookingConfirmation" element={<BookingConfirmation />} />
+            <Route path="*" element={<NoPage />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
 
