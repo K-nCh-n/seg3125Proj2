@@ -10,7 +10,7 @@ const Forum = () => {
       <Row>
         <Col xxl={6}>
           <Card className="mb-4">
-            <Card.Img style={{width: '75px'}} className="mt-3 ms-3" variant="top" src={Profile} />
+            <Card.Img style={{width: '75px'}} className="mt-3 ms-3" variant="top" src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" />
             <Card.Body>
               <Card.Title>
                 <Link to="/forum/PostTitle1">ForumPost</Link>
@@ -25,7 +25,7 @@ const Forum = () => {
         </Col>
         <Col xxl={6}>
           <Card className="mb-4">
-          <Card.Img style={{width: '75px'}} className="mt-3 ms-3" variant="top" src={Profile} />
+          <Card.Img style={{width: '75px'}} className="mt-3 ms-3" variant="top" src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" />
             <Card.Body>
               <Card.Title>
                 <Link to="/forum/PostTitle2">ForumPost</Link>
@@ -43,7 +43,7 @@ const Forum = () => {
       <Row>
         <Col xxl={6}>
           <Card className="mb-4">
-            <Card.Img style={{width: '75px'}} className="mt-3 ms-3" variant="top" src={Profile} />
+            <Card.Img style={{width: '75px'}} className="mt-3 ms-3" variant="top" src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" />
             <Card.Body>
               <Card.Title>
                 <Link to="/forum/PostTitle3">ForumPost</Link>
@@ -58,7 +58,7 @@ const Forum = () => {
         </Col>
         <Col xxl={6}>
           <Card className="mb-4">
-          <Card.Img style={{width: '75px'}} className="mt-3 ms-3" variant="top" src={Profile} />
+          <Card.Img style={{width: '75px'}} className="mt-3 ms-3" variant="top" src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" />
             <Card.Body>
               <Card.Title>
                 <Link to="/forum/PostTitle4">ForumPost</Link>

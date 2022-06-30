@@ -11,7 +11,7 @@ const ForumPost = () => {
         <Row className="mb-4">
           <Col xl={3}>
             <Card className="mb-4 h-100">
-              <Card.Img style={{width: '75px'}} className="mt-3 ms-3" variant="top" src={Profile} />
+              <Card.Img style={{width: '75px'}} className="mt-3 ms-3" variant="top" src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" />
               <Card.Body>
                 <Card.Title>
                   <span className="fw-bold">UserName</span>
@@ -38,7 +38,7 @@ const ForumPost = () => {
         <Row className="mb-4">
           <Col xl={3}>
             <Card className="mb-4 h-100">
-              <Card.Img style={{width: '75px'}} className="mt-3 ms-3" variant="top" src={Profile} />
+              <Card.Img style={{width: '75px'}} className="mt-3 ms-3" variant="top" src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" />
               <Card.Body>
                 <Card.Title>
                   <span className="fw-bold">UserName</span>

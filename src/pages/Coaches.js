@@ -8,7 +8,7 @@ const Coaches = () => {
 
       <Row className="my-4 px-5 g-3 justify-content-center">
         <Col md="4">
-          <Image alt="Photo of Coach#1" src={Coach} fluid></Image>
+          <Image alt="Photo of Coach#1" src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" fluid></Image>
         </Col>
         <Col md="8" className="px-5">
           <h3 className="fw-bold">Coach#1</h3>
@@ -21,7 +21,7 @@ const Coaches = () => {
 
       <Row className="my-4 px-5 g-3 justify-content-center">
         <Col md="4">
-          <Image alt="Photo of Coach#1" src={Coach} fluid></Image>
+          <Image alt="Photo of Coach#1" src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" fluid></Image>
         </Col>
         <Col md="8" className="px-5">
           <h3 className="fw-bold">Coach#1</h3>
@@ -34,7 +34,7 @@ const Coaches = () => {
 
       <Row className="my-4 px-5 g-3 justify-content-center">
         <Col md="4">
-          <Image alt="Photo of Coach#1" src={Coach} fluid></Image>
+          <Image alt="Photo of Coach#1" src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" fluid></Image>
         </Col>
         <Col md="8" className="px-5">
           <h3 className="fw-bold">Coach#1</h3>

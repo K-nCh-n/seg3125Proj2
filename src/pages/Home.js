@@ -9,7 +9,7 @@ const Home = () => {
       <Row>
       <h2 className="text-center fw-bold">Ping Pong Lovers</h2>
         <Col lg="8">
-            <Image className="position-relative" src={BackgroundImage} alt="Ping Pong Lovers" fluid />
+            <Image className="position-relative" src="https://images.unsplash.com/photo-1593786481097-cf281dd12e9e?ixlib=rb-1.2.1" alt="Ping Pong Lovers" fluid />
             <div className="top-50 end-50 position-absolute mt-5 pt-5">
           </div>
         </Col>
