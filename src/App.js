@@ -23,6 +23,7 @@ function App() {
         <div>
           <Routes>
             <Route index element={<Home />} />
+            <Route exact path="/" element={<Home />} />
             <Route path="membership" element={<Membership />} />  {/* <-- add coaching here */}
             <Route path="guides" element={<Guides />} /> 
             <Route path="forum" element={<Forum />} />
@@ -36,7 +37,7 @@ function App() {
             <Route path="coaches" element={<Coaches />} />
             <Route path="cart" element={<Cart />} />
             <Route path="bookingConfirmation" element={<BookingConfirmation />} />
-            <Route path="*" element={<NoPage />} />
+            <Route path="*" element={<Home />} />
           </Routes>
         </div>
       </div>
