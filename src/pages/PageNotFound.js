@@ -1,7 +1,7 @@
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom"
 
-const NoPage = () => {
+const PageNotFound = () => {
   return (
     <Container fluid="xxl" className="my-4 py-4 bg-light" id="background-container">
       <h2 className="fw-bold pt-2">Error 404: This Page could not be found</h2>
@@ -10,4 +10,4 @@ const NoPage = () => {
   );
 }
  
-export default NoPage;
+export default PageNotFound;

@@ -1,12 +1,13 @@
 import NavigationBar from './NavigationBar';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Membership from './pages/Membership';
 import Guides from './pages/Guides';
 import Forum from './pages/Forum';
 import Shop from './pages/Shop';
 import Book from './pages/Book';
-import NoPage from "./pages/NoPage";
+import PageNotFound from "./pages/PageNotFound";
 import SignUp from './pages/SignUp';
 import BillingInfo from './pages/BillingInfo';
 import Confirmation from './pages/Confirmation';
@@ -17,7 +18,7 @@ import BookingConfirmation from './pages/BookingConfirmation';
 
 function App() {
   return (
-    <Router>
+    <Router basename='/seg3125Proj2'>
       <div>
         <NavigationBar />
         <div>
@@ -37,7 +38,8 @@ function App() {
             <Route path="coaches" element={<Coaches />} />
             <Route path="cart" element={<Cart />} />
             <Route path="bookingConfirmation" element={<BookingConfirmation />} />
-            <Route path="*" element={<Home />} />
+            <Route path="404" element={<PageNotFound />} />
+            <Route path="*" element={<Navigate replace to='404' />} />
           </Routes>
         </div>
       </div>
