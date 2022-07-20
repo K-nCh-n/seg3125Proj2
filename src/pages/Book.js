@@ -1,13 +1,21 @@
 import { Container, Row, Col, Form, Card, Table, Button } from "react-bootstrap";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
+import sessionData from "../assets/sessionData";
 
 const Book = () => {
+  const { signedInStatus } = useParams();
+  console.log(signedInStatus);
+
+  const sessions = sessionData;
+
   let navigate = useNavigate();
   const [bookingInfo, setBookingInfo] = useState({
     date: "",
     session: "Session #1"
   });
+
+
   const handleChange = (event) => {
     setBookingInfo(previousState => {
       return { ...previousState, [event.target.name]: event.target.value };
@@ -17,7 +25,12 @@ const Book = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(bookingInfo);
-    navigate("/bookingConfirmation");
+    if (signedInStatus === "signedin") {
+      navigate("/bookingConfirmation");
+    } else {
+      alert("Please sign in to book a session");
+      navigate("/membership");
+    }
   }
 
   return (
@@ -29,15 +42,23 @@ const Book = () => {
             <Form.Group className="my-3">
               <Form.Label>Date</Form.Label>
               <Form.Control name="date" type="date" placeholder="Date" onChange={handleChange} required />
+              <Form.Control.Feedback type="invalid">
+                Please choose a date.
+              </Form.Control.Feedback>
             </Form.Group>
           </Col>
           <Col lg="6">
             <Form.Group className="my-3">
               <Form.Label>Session</Form.Label>
-              <Form.Select name="session" onChange={handleChange}>
-                <option>Session #1</option>
-                <option>Session #2</option>
+              <Form.Select multiple name="session" onChange={handleChange} required>
+                {sessions.map((session) => {
+                  return (
+                    <option>{session[7].time} - {session[6].type}</option>
+                  );})}
               </Form.Select>
+              <Form.Control.Feedback type="invalid">
+                Please choose a session.
+              </Form.Control.Feedback>
             </Form.Group>
           </Col>
         </Row>
@@ -47,12 +68,20 @@ const Book = () => {
               <Card.Body>
                 <Card.Title>{bookingInfo.session}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">
-                  <p>
-                    <strong>Time:</strong> {bookingInfo.session === "Session #1" ? "12:00 PM - 1:00 PM" : "1:00 PM - 2:00 PM"}
-                  </p>
+                  <span className="fw-bold">{bookingInfo.date}</span>
                 </Card.Subtitle>
                 <Card.Text>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem illum incidunt illo, sequi esse, iure, eos ratione quam blanditiis voluptatibus neque soluta quisquam distinctio tenetur est aperiam molestiae. Officiis doloremque, reprehenderit commodi modi eius placeat rerum earum beatae repudiandae asperiores reiciendis quae vel eveniet dolore accusantium eos corrupti assumenda debitis.
+                  {bookingInfo.session.includes("Practice") ? `
+                  Practice session where you can improve your skills and prepare for matches. 
+                  Get Help Finding a Partner using our Forum.` : `
+                  Organised Match Sessions based on each players level.
+                  `}
+                </Card.Text>
+                <Card.Text>
+                  {sessions[1][2].status}
+                </Card.Text>
+                <Card.Text>
+                  Players: {sessions[1][2].players.toString()}
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -61,86 +90,39 @@ const Book = () => {
         <Button variant="primary" type="submit">
           Book
         </Button>
+        <p>Warning: A fee of 5$ will be charged for every 3 sessions which were booked but not attended </p>
       </Form>
 
-      <Table className="my-3 table table-striped">
-          <thead>
-            <tr>
-              <th>Monday</th>
-              <th>Tuesday</th>
-              <th>Wednesday</th>
-              <th>Thursday</th>
-              <th>Friday</th>
-              <th>Saturday</th>
-              <th>Sunday</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="bg-warning">Practice: 08:00-10:00</td>
-              <td className="bg-warning">Practice: 08:00-10:00</td>
-              <td className="bg-warning">Practice: 08:00-10:00</td>
-              <td className="bg-warning">Practice: 08:00-10:00</td>
-              <td className="bg-warning">Practice: 08:00-10:00</td>
-              <td className="bg-warning">Practice: 08:00-10:00</td>
-              <td className="bg-warning">Practice: 08:00-10:00</td>
-            </tr>
-            <tr>
-              <td className="bg-info">Match: 10:00-12:00</td>
-              <td className="bg-warning">Practice: 10:00-12:00</td>
-              <td className="bg-info">Match: 10:00-12:00</td>
-              <td className="bg-warning">Practice: 10:00-12:00</td>
-              <td className="bg-info">Match: 10:00-12:00</td>
-              <td className="bg-info">Match: 10:00-12:00</td>
-              <td className="bg-info">Match: 10:00-12:00</td>
-            </tr>
-            <tr>
-              <td className="bg-warning">Practice: 12:00-14:00</td>
-              <td className="bg-warning">Practice: 12:00-14:00</td>
-              <td className="bg-warning">Practice: 12:00-14:00</td>
-              <td className="bg-warning">Practice: 12:00-14:00</td>
-              <td className="bg-warning">Practice: 12:00-14:00</td>
-              <td className="bg-warning">Practice: 12:00-14:00</td>
-              <td className="bg-warning">Practice: 12:00-14:00</td>
-            </tr>
-            <tr>
-              <td className="bg-info">Match: 14:00-16:00</td>
-              <td className="bg-warning">Practice: 14:00-16:00</td>
-              <td className="bg-info">Match: 14:00-16:00</td>
-              <td className="bg-warning">Practice: 14:00-16:00</td>
-              <td className="bg-info">Match: 14:00-16:00</td>
-              <td className="bg-info">Match: 14:00-16:00</td>
-              <td className="bg-info">Match: 14:00-16:00</td>
-            </tr>
-            <tr>
-              <td className="bg-warning">Practice: 16:00-18:00</td>
-              <td className="bg-warning">Practice: 16:00-18:00</td>
-              <td className="bg-warning">Practice: 16:00-18:00</td>
-              <td className="bg-warning">Practice: 16:00-18:00</td>
-              <td className="bg-warning">Practice: 16:00-18:00</td>
-              <td className="bg-warning">Practice: 16:00-18:00</td>
-              <td className="bg-warning">Practice: 16:00-18:00</td>
-            </tr>
-            <tr>
-              <td className="bg-warning">Practice: 18:00-20:00</td>
-              <td className="bg-info">Match: 18:00-20:00</td>
-              <td className="bg-warning">Practice: 18:00-20:00</td>
-              <td className="bg-info">Match: 18:00-20:00</td>
-              <td className="bg-warning">Practice: 18:00-20:00</td>
-              <td className="bg-warning">Practice: 18:00-20:00</td>
-              <td className="bg-warning">Practice: 18:00-20:00</td>
-            </tr> 
-            <tr>
-              <td className="bg-warning">Practice: 20:00-22:00</td>
-              <td className="bg-warning">Practice: 20:00-22:00</td>
-              <td className="bg-warning">Practice: 20:00-22:00</td>
-              <td className="bg-warning">Practice: 20:00-22:00</td>
-              <td className="bg-warning">Practice: 20:00-22:00</td>
-              <td className="bg-danger">Closed</td>
-              <td className="bg-danger">Closed</td>
-            </tr>
-          </tbody>
-        </Table>
+      <Table striped bordered hover className="my-3 table">
+        <thead>
+          <tr>
+            <th style={{width: "10%"}}></th>
+            <th style={{width: "10%"}}>Monday</th>
+            <th style={{width: "10%"}}>Tuesday</th>
+            <th style={{width: "10%"}}>Wednesday</th>
+            <th style={{width: "10%"}}>Thursday</th>
+            <th style={{width: "10%"}}>Friday</th>
+            <th style={{width: "10%"}}>Saturday</th>
+            <th style={{width: "10%"}}>Sunday</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sessions.map((session) => {
+            return (
+              <tr>
+                <td>{session[7].time}</td>
+                <td>{session[0].type}</td>
+                <td>{session[1].type}</td>
+                <td>{session[2].type}</td>
+                <td>{session[3].type}</td>
+                <td>{session[4].type}</td>
+                <td>{session[5].type}</td>
+                <td>{session[6].type}</td>
+              </tr>
+            )
+          })}
+        </tbody>
+      </Table>
     </Container>
   );
 }

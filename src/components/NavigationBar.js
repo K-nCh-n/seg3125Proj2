@@ -16,10 +16,10 @@ const NavigationBar = () => {
         <Navbar.Collapse id="navbarSupportedContent">
           <Nav>
             <Nav.Item className="px-2"> 
-              <NavLink to="/membership" className={({ isActive }) => 'nav-link ' + (isActive ? 'active' : 'inactive')}>Memberships &amp; Coaching</NavLink>
+              <NavLink to="/membership" className={({ isActive }) => 'nav-link ' + (isActive ? 'active' : 'inactive')}>Memberships</NavLink>
             </Nav.Item>
             <Nav.Item className="px-2">
-              <NavLink to="/guides" className={({ isActive }) => 'nav-link ' + (isActive ? 'active' : 'inactive')}>Guides</NavLink>
+              <NavLink to="/coaching" className={({ isActive }) => 'nav-link ' + (isActive ? 'active' : 'inactive')}>Coaching</NavLink>
             </Nav.Item>
             <Nav.Item className="px-2">
               <NavLink to="/forum" className={({ isActive }) => 'nav-link ' + (isActive ? 'active' : 'inactive')}>Forum</NavLink>

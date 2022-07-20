@@ -1,9 +1,8 @@
-import NavigationBar from './NavigationBar';
+import NavigationBar from './components/NavigationBar';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Membership from './pages/Membership';
-import Guides from './pages/Guides';
 import Forum from './pages/Forum';
 import Shop from './pages/Shop';
 import Book from './pages/Book';
@@ -15,23 +14,26 @@ import Coaches from './pages/Coaches.js';
 import ForumPost from './pages/ForumPost';
 import Cart from './pages/Cart';
 import BookingConfirmation from './pages/BookingConfirmation';
+import MemberPortal from './pages/MemberPortal';
 
 function App() {
   return (
-    <Router basename='/seg3125Proj2'>
+    <Router>
       <div>
         <NavigationBar />
         <div>
           <Routes>
             <Route index element={<Home />} />
             <Route exact path="/" element={<Home />} />
-            <Route path="membership" element={<Membership />} />  {/* <-- add coaching here */}
-            <Route path="guides" element={<Guides />} /> 
+            <Route path="membership" element={<Membership />} />
+            <Route path="coaching" element={<Coaches />} />
+            <Route path="memberPortal" element={<MemberPortal />} />            
             <Route path="forum" element={<Forum />} />
             <Route path='forum/:post' element={<ForumPost />} />
             <Route path="shop/:category" element={<Shop />} />
             <Route exact path="shop" element={<Shop />} />
-            <Route path="book" element={<Book />} />
+            <Route path="book/:signedInStatus" element={<Book />} />
+            <Route exact path="book" element={<Book />} />
             <Route path="signup" element={<SignUp />} />
             <Route path="billingInfo" element={<BillingInfo />} />
             <Route path="confirmation" element={<Confirmation />} />
