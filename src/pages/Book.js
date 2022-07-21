@@ -90,7 +90,7 @@ const Book = () => {
         <Button variant="primary" type="submit">
           Book
         </Button>
-        <p>Warning: A fee of 5$ will be charged for every 3 sessions which were booked but not attended </p>
+        <p className="alert alert-warning m-2 my-4">Warning: A fee of 5$ will be charged for every 3 sessions which were booked but not attended </p>
       </Form>
 
       <Table striped bordered hover className="my-3 table">

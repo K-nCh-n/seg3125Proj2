@@ -5,6 +5,7 @@ import ShopRow from "../components/ShopRow";
 const Shop = () => {
   const { category } = useParams();
   return (
+    // BREADCRUMBS
     <Container fluid="xxl" className="my-4 py-4 bg-light" id="background-container">
       <Row>
         <Col md="4" lg="3" xl="2" className="mb-3">

@@ -7,6 +7,7 @@ const ForumPost = () => {
   return (
     <Container fluid="xxl" className="my-4 py-4 bg-light" id="background-container">
       <h2 className="fw-bold pt-2 text-center">{post}</h2>
+      {/*  */}
       <div>
         <Row className="mb-4">
           <Col xl={3}>
@@ -17,7 +18,7 @@ const ForumPost = () => {
                   <span className="fw-bold">UserName</span>
                 </Card.Title>
                 <Card.Text>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Started playing 1 year ago
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -26,7 +27,9 @@ const ForumPost = () => {
             <Card className="mb-4 h-100">
               <Card.Body>
                 <Card.Text className="p-4">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem modi quasi facilis delectus numquam quis animi quo molestiae eos ex fuga doloribus, alias enim veniam voluptates repellat, repellendus accusamus nisi incidunt eveniet dolorum neque maiores voluptate ad. Velit sit unde corporis, eos temporibus natus eius alias at nulla facilis illum quod maiores voluptatem excepturi nobis mollitia minima eum commodi nisi atque saepe id aut suscipit tempore. Cumque voluptates consectetur maiores incidunt nobis porro quibusdam necessitatibus sunt? Cum dignissimos, earum ab esse odio necessitatibus sequi sed fugit. Nisi unde sint aut, placeat praesentium doloremque vitae, labore ut velit, consequuntur deserunt porro!
+                  Hey Guys,
+                  I am a beginner table tennis player who has just started a few weeks and I am looking for a partner to play with.
+                  I'd love to learn from you all and I hope you all enjoy playing with me.
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -41,10 +44,10 @@ const ForumPost = () => {
               <Card.Img style={{width: '75px'}} className="mt-3 ms-3" variant="top" src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" />
               <Card.Body>
                 <Card.Title>
-                  <span className="fw-bold">UserName</span>
+                  <span className="fw-bold">John</span>
                 </Card.Title>
                 <Card.Text>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  10 years experience
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -53,7 +56,8 @@ const ForumPost = () => {
             <Card className="mb-4 h-100">
               <Card.Body>
                 <Card.Text className="p-4">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem modi quasi facilis delectus numquam quis animi quo molestiae eos ex fuga doloribus, alias enim veniam voluptates repellat, repellendus accusamus nisi incidunt eveniet dolorum neque maiores voluptate ad. Velit sit unde corporis, eos temporibus natus eius alias at nulla facilis illum quod maiores voluptatem excepturi nobis mollitia minima eum commodi nisi atque saepe id aut suscipit tempore. Cumque voluptates consectetur maiores incidunt nobis porro quibusdam necessitatibus sunt? Cum dignissimos, earum ab esse odio necessitatibus sequi sed fugit. Nisi unde sint aut, placeat praesentium doloremque vitae, labore ut velit, consequuntur deserunt porro!
+                  Hey,
+                  I will be at the club tonight at 8pm. If you are around then I'd love to play with you.
                 </Card.Text>
               </Card.Body>
             </Card>

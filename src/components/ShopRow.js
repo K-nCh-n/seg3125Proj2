@@ -42,7 +42,8 @@ const ShopRow = (props) => {
           </Card>
         </Col><Col xl="4" className="my-2">
           <Card>
-          <Card.Img variant="top" src="https://images.unsplash.com/photo-1534158914592-062992fbe900?ixlib=rb-1.2.1" />
+          <Card.Img variant="top" src="https://images.unsplash.com/photo-1511067007398-7e4b90cfa4bc?ixlib=rb-1.2.1" /> 
+          {/* THIS THING */}
             <Card.Body>
               <Card.Title>Item #3</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">$10.00</Card.Subtitle>

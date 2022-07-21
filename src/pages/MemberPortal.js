@@ -47,13 +47,10 @@ const MemberPortal = () => {
             <Card.Body>
               <Card.Title className="fw-bold mb-3">Manage My Account</Card.Title>
               <Card.Text>
-                <Link to="/memberPortal/edit">Edit Member Information</Link>
+                <Link to="/editInfo">Edit Member Information</Link>
               </Card.Text>
               <Card.Text>
-                <Link to="/memberPortal/changePassword">Change Password</Link>
-              </Card.Text>
-              <Card.Text>
-                <Link to="/memberPortal/viewSessions">View My Sessions</Link>
+                <Link to="/mysessions">View My Sessions</Link>
               </Card.Text>
               <Card.Text>
                 <Link to="/book/signedin">Book Sessions</Link>
@@ -62,7 +59,6 @@ const MemberPortal = () => {
           </Card>
         </Col>
         <Col lg="9">
-          {/* Member information */}
           <Card className="card">
             <Card.Body>
               <Card.Title className="fw-bold">Member Information</Card.Title>
@@ -87,7 +83,7 @@ const MemberPortal = () => {
             </Card.Body>
           </Card>
         </Col>
-      </Row>
+      </Row>    
     </Container>
   );
 }

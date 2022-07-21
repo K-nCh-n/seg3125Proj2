@@ -15,6 +15,10 @@ import ForumPost from './pages/ForumPost';
 import Cart from './pages/Cart';
 import BookingConfirmation from './pages/BookingConfirmation';
 import MemberPortal from './pages/MemberPortal';
+import EditInfo from './pages/EditInfo';
+import MySessions from './pages/MySessions';
+import Guides from './pages/Guides';
+
 
 function App() {
   return (
@@ -27,7 +31,10 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route path="membership" element={<Membership />} />
             <Route path="coaching" element={<Coaches />} />
-            <Route path="memberPortal" element={<MemberPortal />} />            
+            <Route path="guides" element={<Guides />} />
+            <Route exact path="memberPortal" element={<MemberPortal />} />  
+            <Route path="mysessions" element={<MySessions />} />  
+            <Route path="editInfo" element={<EditInfo />} />        
             <Route path="forum" element={<Forum />} />
             <Route path='forum/:post' element={<ForumPost />} />
             <Route path="shop/:category" element={<Shop />} />

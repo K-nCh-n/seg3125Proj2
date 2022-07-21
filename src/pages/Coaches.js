@@ -22,7 +22,7 @@ const Coaches = () => {
                   <span className="fw-bold">$20 per session</span>
                 </p>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quisquam vero iste excepturi commodi facilis nihil ducimus sit illum quis.
+                  For players who have just started playing and would like to get a feel for the game.
                 </p>
               </Card.Text>
             </Card.Body>
@@ -39,7 +39,7 @@ const Coaches = () => {
                   <span className="fw-bold">$25 per session</span>
                 </p>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quisquam vero iste excepturi commodi facilis nihil ducimus sit illum quis.
+                  For players who are comfortable with the game and would like to improve their skills.
                 </p>
               </Card.Text>
             </Card.Body>
@@ -56,7 +56,7 @@ const Coaches = () => {
                   <span className="fw-bold">$30 per session</span>
                 </p>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quisquam vero iste excepturi commodi facilis nihil ducimus sit illum quis.
+                  For experienced and long-time players who want to become more competitive.
                 </p>
               </Card.Text>
             </Card.Body>
@@ -73,7 +73,7 @@ const Coaches = () => {
                   <span className="fw-bold">$150 for 10 sessions irrespective of level</span>
                 </p>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quisquam vero iste excepturi commodi facilis nihil ducimus sit illum quis.
+                  Pay for 10 sessions at once to save some money.
                 </p>
               </Card.Text>
             </Card.Body>
@@ -83,9 +83,9 @@ const Coaches = () => {
 
       {coachesData.map((coach) => {
         return (
-          <Row className="my-4 px-5 g-3">
+          <Row className="my-5 px-5 g-3">
             <Col lg="3" className="mb-2">
-              <Image src={Coach} fluid alt={"Photo of " + coach.name} />
+              <Image src={coach.image} fluid alt={"Photo of " + coach.name} />
             </Col>
             <Col lg="9" className="px-5">
               <h3 className="fw-bold">{coach.name}</h3>
