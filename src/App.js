@@ -22,7 +22,7 @@ import Guides from './pages/Guides';
 
 function App() {
   return (
-    <Router>
+    <Router basename='seg3125Proj2'>
       <div>
         <NavigationBar />
         <div>
